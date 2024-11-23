@@ -133,22 +133,22 @@ form.sign-in-form {
 }
 
 .btn {
-  width: 150px;
-  background-color: #5995fd;
+  padding: 10px;
+  width: 140px;
+  background-color: #333;
   border: none;
   outline: none;
-  height: 49px;
-  border-radius: 49px;
+  height: 45px;
+  border-radius: 32px;
   color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 10px 0;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 16px;
 }
 
 .btn:hover {
-  background-color: #4d84e2;
+  background-color: #c01515;
 }
 .panels-container {
   position: absolute;
@@ -208,7 +208,15 @@ form.sign-in-form {
 .panel h3 {
   font-weight: 600;
   line-height: 1;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.logo{
+  font-size: 3rem;
+  color:white;
+  font-weight: bolder;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .panel p {

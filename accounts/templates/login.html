@@ -20,7 +20,7 @@
           <!-- Sign In Form -->
           <form method="POST" class="sign-in-form" id="student-form">
             {% csrf_token %}
-            <h2 class="title">Sign in</h2>
+            <h2 class="title">Mahasiswa</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="nim" placeholder="NIM" required />
@@ -29,14 +29,15 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="password" placeholder="Password" required />
             </div>
-            <div>
-              <button class="btn-2" type="submit" value="login">Login</button>
+            <div class="gridbutton" style="display: flex; gap: 10px; padding-top: 20px;">
+              <button class="btn" id="sign-up-btn" type="button">Pengajar</button>
+              <button class="btn" type="submit" value="login">Login</button>
             </div>
           </form>
           <!-- Sign Up Form -->
           <form method="POST" class="sign-up-form" id="teacher-form">
             {% csrf_token %}
-            <h2 class="title">Sign in</h2>
+            <h2 class="title">Pengajar</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="nip" placeholder="NIP" required />
@@ -45,8 +46,9 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="password" placeholder="Password" required />
             </div>
-            <div>
-              <button class="btn-2" type="submit" value="login">Login</button>
+            <div class="gridbutton" style="display: flex; gap: 10px; padding-top: 20px;">
+              <button class="btn" type="submit" value="login">Login</button>
+              <button class="btn" id="sign-in-btn" type="button">Mahasiswa</button>
             </div>
           </form>
         </div>
@@ -56,18 +58,14 @@
         <!-- Sign In Panel -->
         <div class="panel left-panel">
           <div class="content">
-            <h3>Portal Mahasiswa</h3>
-            <p>Pengajar login di halaman sebelah</p>
-            <button class="btn transparent" id="sign-up-btn">Pengajar</button>
+            <a href='/' class="logo">Cheator <span>.</span></a>
           </div>
           <img src="{% static 'asset/img/login.svg' %}" class="image" alt="Log Image" />
         </div>
         <!-- Sign Up Panel -->
         <div class="panel right-panel">
           <div class="content">
-            <h3>Login Pengajar</h3>
-            <p>Kamu mahasiswa? jangan Login disini</p>
-            <button class="btn transparent" id="sign-in-btn">Mahasiswa</button>
+            <a href='/' class="logo">Cheator <span>.</span></a>
           </div>
           <img src="{% static 'asset/img/pengawass.svg' %}" class="image" alt="Register Image" />
         </div>
