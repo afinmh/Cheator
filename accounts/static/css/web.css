@@ -147,12 +147,12 @@ canvas {
     margin-top: 15px;
     font-size: 12px;
     color: #777;
-    text-align: justify;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .modal-content p {
-    text-align: justify; /* Atur rata kanan-kiri */
+    text-align: center; /* Atur rata kanan-kiri */
     margin-top: 10px;    /* Jarak atas dengan elemen sebelumnya */
     font-size: 14px;     /* Ukuran teks */
     color: #333;         /* Warna teks */
