@@ -219,6 +219,10 @@ form.sign-in-form {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+span{
+  color:  #8c0000;
+}
+
 .panel p {
   font-size: 0.95rem;
   padding: 0.7rem 0;

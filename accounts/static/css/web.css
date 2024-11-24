@@ -94,3 +94,69 @@ canvas {
 .logo span {
     color: red;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    width: 100%; /* Ensure modal covers the screen */
+    height: 100%;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content button {
+    background-color: #EA4335; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-content button:hover {
+    background-color: #5f6368;
+}
+
+.modal-content img {
+    width: 350px; /* Atur lebar gambar */
+    height: auto; /* Pertahankan rasio aspek gambar */
+    margin: 0 auto 15px; /* Auto untuk horizontal centering, dan jarak bawah */
+    display: block; /* Agar margin auto berfungsi */
+}
+
+.modal-content small {
+    display: block;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #777;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    text-align: justify; /* Atur rata kanan-kiri */
+    margin-top: 10px;    /* Jarak atas dengan elemen sebelumnya */
+    font-size: 14px;     /* Ukuran teks */
+    color: #333;         /* Warna teks */
+    line-height: 1.6;    /* Jarak antar baris */
+    font-weight: bold;
+    
+}
