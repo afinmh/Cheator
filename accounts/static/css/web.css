@@ -105,6 +105,22 @@ canvas {
     background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
     width: 100%; /* Ensure modal covers the screen */
     height: 100%;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1.5s forwards; /* Apply fadeIn animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal.show {
+    display: block;
+    animation: fadeIn 0.5s forwards;
 }
 
 .modal-content {
@@ -128,7 +144,7 @@ canvas {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 .modal-content button:hover {

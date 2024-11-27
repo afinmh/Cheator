@@ -3,7 +3,7 @@ import numpy as np
 import base64
 from channels.generic.websocket import WebsocketConsumer
 from .cheat import process_frame
-from .yawn import detect_yawn
+from .offline import detect
 import json
 from django.core.files.base import ContentFile
 import uuid
@@ -93,7 +93,7 @@ class VideoConsumer(WebsocketConsumer):
 
         if img is not None:
             # Proses frame menggunakan fungsi detect_yawn dari yawn.py
-            processed_frame, yawn_status = detect_yawn(img)
+            processed_frame, offline_status = detect(img)
 
             # Encode frame hasil pemrosesan ke format base64
             _, buffer = cv2.imencode('.jpg', processed_frame)
@@ -102,10 +102,10 @@ class VideoConsumer(WebsocketConsumer):
             # Membuat payload untuk dikirim balik ke client
             response = {
                 'image': 'data:image/jpeg;base64,' + encoded_image,
-                'status': yawn_status
+                'status': offline_status
             }
 
-            if yawn_status == "Menguap" and self.student_name and self.class_name:
+            if offline_status == True and getattr(self, 'previous_status', None) != True:
                 image_name = f"{uuid.uuid4()}.jpg"
                 image_data = ContentFile(buffer.tobytes(), image_name)
 
@@ -114,6 +114,8 @@ class VideoConsumer(WebsocketConsumer):
                     class_name=self.class_name,
                     cheating_image=image_data
                 )
+
+            self.previous_status = offline_status
 
             # Kirim hasil frame dan status ke client dalam format JSON
             self.send(text_data=json.dumps(response))

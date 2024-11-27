@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const className = document.getElementById('className').textContent; // Misalkan ada elemen dengan id className
 
     function startCamera() {
-        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } })
+        navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } })
             .then((mediaStream) => {
                 stream = mediaStream;
                 videoCanvas.width = 640;
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     socket.send(className);
 
                     setInterval(drawFrame, 50);
+
 
                     socket.onmessage = (event) => {
                         proses = false;

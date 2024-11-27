@@ -9,7 +9,7 @@ from .models import User, Class,  CheatingEvent
 import base64
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from. import cheat, yawn  # Pastikan file cheat.py diimport
+from. import cheat# Pastikan file cheat.py diimport
 from PIL import Image
 
 @csrf_exempt
